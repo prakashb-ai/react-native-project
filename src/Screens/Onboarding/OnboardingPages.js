@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Dimensions, Image, FlatList, PixelRatio } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, Image, FlatList,TouchableOpacity } from 'react-native';
 
 const { width, height } = Dimensions.get('window') || { width: 0, height: 0 }
+
+
 
 const slides = [
     {
@@ -24,7 +26,7 @@ const slides = [
     },
     {
         key: '3',
-        title: 'Eco-Friendly',
+        title: 'Local',
         description: 'We love the earth and know you do too! Join us in reducing our local carbon footprint one order at a time',
         image: require('../../../images/Group46.png'),
         text: 'Join the movement',
@@ -33,7 +35,7 @@ const slides = [
     }
 ];
 
-const OnboardingPages = () => {
+const OnboardingPages = ({navigation}) => {
     const [showHomePage, setShowHomePage] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -65,13 +67,17 @@ const OnboardingPages = () => {
                         ))}
                     </View>
 
-                    <View style={[styles.buttonContainer,{ backgroundColor: item.backgroundColor }]}>
+                    <View style={[styles.buttonContainer, { backgroundColor: item.backgroundColor }]}>
                         <Text style={styles.buttonText}>{item.text}</Text>
                     </View>
 
 
                     <View style={styles.LoginContainer}>
-                          <Text style={styles.loginText}>{item.loginText}</Text>
+                        <TouchableOpacity
+                        onPress={()=>navigation.navigate('LoginPage')}
+                        >
+                        <Text style={styles.loginText}>{item.loginText}</Text>
+                        </TouchableOpacity>
                     </View>
 
                 </View>
@@ -109,9 +115,12 @@ const OnboardingPages = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        width: width,
+        height: height,
+
     },
     imageContainer: {
-        width: width,
+        width: width * 1,
         height: height / 1.44,
         paddingTop: height / 26,
 
@@ -158,7 +167,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         marginBottom: height / 4.6,
-        
+
     },
     dot: {
         width: 8,
@@ -175,11 +184,11 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         marginTop: -height / 6,
-        width:width/1.2,
-        height:height/14,
-        borderRadius:48,
-        justifyContent:'center',
-        alignSelf:'center'
+        width: width / 1.2,
+        height: height / 14,
+        borderRadius: 48,
+        justifyContent: 'center',
+        alignSelf: 'center'
 
     },
     buttonText: {
@@ -187,17 +196,18 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         textAlign: 'center'
     },
-    LoginContainer:{
-        marginTop:height/35
+    LoginContainer: {
+        marginTop: height / 35
 
     },
-    loginText:{
-        fontSize:16,
-        fontWeight:'500',
-        textAlign:'center',
-        lineHeight:20.45,
-        textDecorationLine:'underline'
-    }
+    loginText: {
+        fontSize: 16,
+        fontWeight: '500',
+        textAlign: 'center',
+        lineHeight: 20.45,
+        textDecorationLine: 'underline'
+    },
+
 });
 
 export default OnboardingPages;
