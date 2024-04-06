@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
         width: 15,
         height: 7,
         borderRadius: 3,
-        backgroundColor: '##261C12',
+        backgroundColor: '#261C12',
     },
     buttonContainer: {
         marginTop: -height / 6,

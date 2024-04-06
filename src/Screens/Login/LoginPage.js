@@ -1,4 +1,4 @@
-import { StyleSheet, View, Dimensions, Text, TouchableOpacity, TextInput } from 'react-native'
+import { StyleSheet, View, Dimensions, Text, TouchableOpacity, Image,TextInput } from 'react-native'
 import React, { useState } from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 
@@ -14,7 +14,6 @@ const LoginPage = () => {
 
 
   const getPasswordValue = () => {
-    // If password is false, return an empty string, otherwise return the password state
     return password ? password.toString() : ''
 
   }
@@ -68,12 +67,36 @@ const LoginPage = () => {
           </View>
 
 
+          <View style={[styles.buttonContainer, {  backgroundColor: "#D5715B"}]}>
+            <Text style={styles.buttonText}>Login</Text>
+          </View>
 
+
+          <View style={styles.orLoginContainer}>
+            <Text style={styles.LoginWithWord}>or login with</Text>
+          </View>
+
+
+          <View style={styles.loginIcon}>
+            <View>
+            <Image source={require('../../../images/googlemini.png')}></Image>
+            </View>
+
+            <View>
+            <Image source={require('../../../images/appleiconmini.png')}></Image>
+            </View>
+
+            <View>
+            <Image source={require('../../../images/facebookmini.png')}></Image>
+            </View>
+        </View>
 
         </View>
 
 
       </View>
+
+
 
     </View>
   )
@@ -153,9 +176,9 @@ const styles = StyleSheet.create({
   input: {
     fontSize: 17,
   },
-  forgetWord:{
-      fontSize:12,
-      color:"#D5715B"
+  forgetWord: {
+    fontSize: 12,
+    color: "#D5715B"
 
   },
 
@@ -166,8 +189,43 @@ const styles = StyleSheet.create({
     marginRight: width / 25
 
   },
-  forgetText:{
-    justifyContent:'center',
-    paddingLeft:"50%"
-  }
+  forgetText: {
+    justifyContent: 'center',
+    paddingLeft: "50%"
+  },
+
+  buttonContainer:{
+    margin:height/25,
+    width: width / 1.2,
+    height: height / 14,
+    borderRadius: 48,
+    justifyContent: 'center',
+    alignSelf: 'center'
+  },
+
+  buttonText: {
+    fontSize: 18,
+    fontWeight: '500',
+    textAlign: 'center',
+    color:'white'
+},
+
+orLoginContainer:{
+  alignItems:'center'
+},
+LoginWithWord:{
+  color: "#261C124D"
+},
+
+loginIcon:{
+    flexDirection:'row',
+    justifyContent:'space-between',
+    top:height/30,
+    margin:height/50
+},
+
+
+
+
+
 })
