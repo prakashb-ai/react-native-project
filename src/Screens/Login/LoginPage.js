@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5'
 
 const { width, height } = Dimensions.get('window') || { width: 0, height: 0 }
 
-const LoginPage = () => {
+const LoginPage = ({navigation}) => {
 
 
   const [email, setEmail] = useState('')
@@ -62,7 +62,11 @@ const LoginPage = () => {
               autoCapitalize="none"
             />
             <View style={styles.forgetText}>
+              <TouchableOpacity
+                onPress={()=>navigation.navigate('ForgotPage')}
+              >
               <Text style={styles.forgetWord}>Forgot?</Text>
+              </TouchableOpacity>
             </View>
           </View>
 
@@ -95,9 +99,6 @@ const LoginPage = () => {
 
 
       </View>
-
-
-
     </View>
   )
 }
@@ -109,7 +110,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   WelcomeContainter: {
-    marginTop: height / 4,
+    marginTop: height / 5,
     marginLeft: width / 34
   },
   welcomeText: {
@@ -169,7 +170,9 @@ const styles = StyleSheet.create({
     width: width / 1.1,
     height: height / 14,
     borderRadius: Math.min(width, height) / 24,
-    paddingLeft: width / 20
+    paddingLeft: width / 20,
+    elevation: 0.5,
+
 
 
   },

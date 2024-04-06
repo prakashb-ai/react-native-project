@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import OnboardingPages from '../Screens/Onboarding/OnboardingPages'
 import LoginPage from '../Screens/Login/LoginPage'
+import ForgotPage from '../Screens/Login/ForgotPage'
 
 
 const Stack = createNativeStackNavigator();
@@ -18,6 +19,8 @@ const Appnavigation = () => {
                 }}>
                 <Stack.Screen name="OnboardingPages" component={OnboardingPages}/>
                 <Stack.Screen name="LoginPage" component={LoginPage}/>
+                <Stack.Screen name="ForgotPage" component={ForgotPage}/>
+
                
 
             </Stack.Navigator>
