@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 const { width, height } = Dimensions.get('window') || { width: 0, height: 0 }
 
 
-const ForgotPage = () => {
+const ForgotPage = ({navigation}) => {
 
   const [phoneNumber, setPhoneNumber] = useState('')
 
@@ -16,7 +16,7 @@ const ForgotPage = () => {
       </View>
 
       <View style={styles.createContainer}>
-        <Text style={styles.createText}>Remember your pasword?
+        <Text style={styles.createText}>Remember your password?
           <Text style={styles.createColor}> Login</Text>
         </Text>
       </View>
@@ -42,9 +42,13 @@ const ForgotPage = () => {
           </View>
         </View>
       </View>
+      <TouchableOpacity 
+        onPress={()=>navigation.navigate('VerifyOtp')}
+      >
       <View style={[styles.buttonContainer, { backgroundColor: "#D5715B" }]}>
         <Text style={styles.buttonText}>Send Code</Text>
       </View>
+      </TouchableOpacity>
 
     </View>
   )
@@ -116,7 +120,7 @@ const styles = StyleSheet.create({
   },
 
   buttonContainer:{
-    margin:height/25,
+    margin:height/28,
     width: width / 1.2,
     height: height / 14,
     borderRadius: 48,

@@ -53,7 +53,7 @@ const LoginPage = ({navigation}) => {
             <Icon name="lock" size={20} color="#D3D3D3" style={styles.passwordIcon} />
             <TextInput
 
-              style={styles.input}
+              style={styles.paddingLeftinput}
               placeholder="Password"
               onChangeText={text => setPassword(text)}
               secureTextEntry={true}
@@ -160,7 +160,6 @@ const styles = StyleSheet.create({
 
   },
   passowordText: {
-    paddingLeft: width / 45,
     flexDirection: 'row',
     fontWeight: 500,
     padding: height / 50,
@@ -181,7 +180,7 @@ const styles = StyleSheet.create({
   },
   forgetWord: {
     fontSize: 12,
-    color: "#D5715B"
+    color: "#D5715B",
 
   },
 
@@ -194,7 +193,8 @@ const styles = StyleSheet.create({
   },
   forgetText: {
     justifyContent: 'center',
-    paddingLeft: "50%"
+    paddingLeft:width/2.5
+
   },
 
   buttonContainer:{

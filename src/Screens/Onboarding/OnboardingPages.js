@@ -122,14 +122,14 @@ const styles = StyleSheet.create({
     imageContainer: {
         width: width * 1,
         height: height / 1.44,
-        paddingTop: height / 26,
+        paddingTop: height / 30,
+
 
     },
     images: {
         width: width,
         height: height / 2,
-        resizeMode: 'contain',
-
+        resizeMode: 'cover',
     },
 
     boxInformation: {
@@ -152,13 +152,13 @@ const styles = StyleSheet.create({
     },
     descriptionsContainer: {
         alignItems: 'center',
-        marginTop: height / 18,
-        margin: width / 12,
+        marginTop: height / 25,
+        margin: width / 15,
 
 
     },
     descriptionName: {
-        fontSize: 14,
+        fontSize: height/55,
         fontWeight: '400',
         lineHeight: 20.45,
         textAlign: 'center'
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#261C12',
     },
     buttonContainer: {
-        marginTop: -height / 6,
+        marginTop: -height / 5.6,
         width: width / 1.2,
         height: height / 14,
         borderRadius: 48,
@@ -204,8 +204,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: '500',
         textAlign: 'center',
-        lineHeight: 20.45,
-        textDecorationLine: 'underline'
+        textDecorationLine: 'underline',
     },
 
 });
